@@ -8,7 +8,7 @@ flExamples.controller('searchExCtrl', ['$scope', function($scope) {
 				field: 'name', 
 				condition: 'like_b', 
 				value: $scope.list.search_value,
-				option: true
+				options: {insensitive: true}
 			}]
 		});
 	};
