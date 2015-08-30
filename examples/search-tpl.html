@@ -1,0 +1,12 @@
+<fl-main list="list"></fl-main>
+<form name="search_ex_form">
+<div class="input-group">
+  <input type="text" class="form-control" placeholder="Search for..." data-ng-model="list.search_value">
+  <span class="input-group-btn">
+	<button class="btn btn-default" type="submit" data-ng-click="list.search(); $event.preventDefault();" >Go!</button>
+  </span>
+</div>
+</form>
+<ul>
+	<li data-ng-repeat="rec in list.records">{{rec['name']}}</li>
+</ul>

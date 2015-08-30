@@ -1,0 +1,79 @@
+<fl-main list="list"></fl-main>
+<div class="row">
+	<form>
+	<!-- Select search field -->
+	<div class="col-lg-3">
+		<div class="input-group">
+			<div class="input-group-btn">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{{'Select a field'}}">
+					Field <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href="" data-ng-click="list.setSearch(false);">&nbsp;</a></li>
+					<li data-ng-repeat="field in list.search_fields"><a href="" data-ng-click="list.setSearch(field);">{{field.title}}</a></li>
+				</ul>
+			</div>
+			<input type="text" class="form-control" placeholder="<- {{'Select a field'}}" aria-label="Search Field" data-ng-model="list.search_field.title" readonly>
+		</div>
+	</div>
+	<!-- Select filter -->
+	<div class="col-lg-3">
+		<div class="input-group">
+			<div class="input-group-btn">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{{'Select a filter'}}">
+					Filter <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href="" data-ng-click="list.setFilter(false);">&nbsp;</a></li>
+					<li data-ng-repeat="filter in list.search_field.filters"><a href="" data-ng-click="list.setFilter(filter);">{{filter.title}}</a></li>
+				</ul>
+			</div>
+			<input type="text" class="form-control" placeholder="<- {{'Select a filter'}}" aria-label="Search Filter" data-ng-model="list.search_filter.title" readonly>
+		</div>
+	</div>
+	<!-- Enter search value -->
+	<div class="col-lg-6">
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="{{'Search for'}}..." data-ng-model="list.search_value">
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="submit" data-ng-click="list.search(); $event.preventDefault();" title="{{'Search'}}">
+					<span class="glyphicon glyphicon-search" aria-hidden="true"></span> 
+				</button>
+			</span>
+		</div>
+	</div>
+	</form>
+</div>
+<div class="row" data-ng-if="! list.isEmpty()">
+	<div class="col-lg-12">
+		<table class="table">
+		<thead>
+		  <tr>
+			<th>Name </th>
+			<th>Age </th>
+			<th>Carrier </th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr data-ng-repeat="rec in list.records">
+			<td>{{rec['name']}}</td>
+			<td>{{rec['age']}}</td>
+			<td>{{rec['carrier']}}</td>
+		  </tr>
+		</tbody>
+		</table>
+	</div>
+</div>
+<div class="row" data-ng-if="list.isEmpty()">
+	<div class="col-lg-12">
+		<p>NO DATA FOUND<p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-12">
+		<div data-ng-if="list.options.listURL">
+			<p>Server response:</p>
+			<p><pre style="height:200px;scroll:auto;"><code>{{list.server_response | json: 2}}</code></pre></p>
+		</div>
+	</div>
+</div>

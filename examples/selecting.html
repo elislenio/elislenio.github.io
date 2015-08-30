@@ -1,0 +1,42 @@
+<div class="row">
+	<div class="col-lg-12">
+		<div class="page-header">
+			<h1>Selecting rows</h1>
+		</div>
+		<p>The selection of records is enabled by default and can be disabled by setting the <code>selectable</code> option to <em>false</em>.</p>
+		<article data-ng-controller="exSelectingCtrl">
+			<section>
+				<h2 class="text-primary" style="margin-top:50px;"><a name="" id="single" class="fh-anchor">Selecting single rows</a></h2>
+				<p>Use the <code>multiselect</code> option to control the selection of multiple records.</p>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<p class="panel-title">Live demo:</p>
+					</div>
+					<div class="panel-body" style="min-height:300px;" data-ng-controller="selectPhonesExCtrl">
+						<select-example list="phones1"></select-example>
+					</div>
+				</div>
+				<ex-tabs tabs="exselecting"></ex-tabs>
+			</section>
+			
+			<!-- multiple selection -->
+			<section>
+				<h2 class="text-primary" style="margin-top:50px;"><a name="" id="multiple" class="fh-anchor">Selecting multiple rows</a></h2>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<p class="panel-title">Live demo:</p>
+					</div>
+					<div class="panel-body" style="min-height:300px;" data-ng-controller="multiselectPhonesExCtrl">
+						<select-example list="phones2"></select-example>
+					</div>
+				</div>
+				<ex-tabs tabs="exselectingmultiple"></ex-tabs>
+			</section>
+			
+		</article>
+		<p class="lead" style="margin-top:50px;">
+			<a href="#/tutorial/search" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Previous: Search data. </a>
+			<a href="#/tutorial/pagination" class="pull-right">Next: Pagination. <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+		</p>
+	</div>
+</div>

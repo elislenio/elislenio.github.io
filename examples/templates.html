@@ -1,0 +1,66 @@
+<div class="row">
+	<div class="col-lg-12">
+		<div class="page-header">
+			<h1>Putting all together</h1>
+		</div>
+		<p>By now, we clearly realize that templates plays the central role, while FL remains in the shadows exposing the API to the template.</p>
+		<p>That is precisely the intention: give complete freedom to the look and feel of your application while FL provides the underlying basic functionality and an agreement for the client-server communication.</p>
+		<p>It is common to find modules that perform a different approach to this goal. 
+		These modules, usually completely encapsulate the dynamic HTML generation and expose an API to perform any customization of appearance. 
+		This leads to unwieldy APIs, only in order to allow flexibility.</p>
+		<p>FL's soul is giving maximum flexibility and we understand that this is achieved only by giving the application full control of the template.</p>
+		<p>Another main objective of FL, is to allow the creation of reusable templates. For a template to be reusable with different datasets, it should not contain any reference to fields or settings of a particular dataset.</p>
+		<p>To illustrate these concepts, and how they can be achieved, FL includes some sample templates.</p>
+		<p>You are encouraged to create your unique and wonderful templates, or modify an existing one to suit your needs.</p>
+		
+		<article data-ng-controller="exTemplatesCtrl">
+			
+			<section style="margin-top:50px;">
+				<h2 class="text-primary" style="margin-top:50px;"><a name="crudtable" class="fh-anchor"><em>CrudTable</em> template</a></h2>
+				<p>The following example uses <em>CrudTable</em>, a complex template (included with FL) that implements many of the API features.</p>
+				<p>This template is intended to be used in CRUD applications.</p>
+				<p>Additional Angujar.JS modules are needed in this template: </p>
+					<ul>
+						<li><a href="https://angular-gettext.rocketeer.be/" target="_blank">angular-gettext</a> for translation support.</li>
+						<li><a href="https://github.com/treasure-data/angular-treasure-overlay-spinner" target="_blank">angular-treasure-overlay-spinner</a> for UI overlay.</li>
+						<li><a href="http://angular-ui.github.io/bootstrap/#/getting_started" target="_blank">Angular UI Bootstrap</a> for pagination.</li>
+					</ul>
+				<br />
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<p class="panel-title">Live demo: <br><em>Search for "Dell Venue" to see a read-only record.</em></p>
+					</div>
+					<div class="panel-body" style="min-height:730px;" data-ng-controller="ctPhonesExCtrl">
+						<crud-table list="phones.fl" ct="phones.ct" template="/assets/flexi-list/templates/crud-table/crud-table.html"></crud-table>
+					</div>
+				</div>
+				<ex-tabs tabs="ex_ct"></ex-tabs>
+			</section>
+			
+			<section style="margin-top:50px;">
+				<h2 class="text-primary" style="margin-top:50px;"><a name="thumbs" class="fh-anchor"><em>Thumbs</em> template</a></h2>
+				<p>The following example uses <em>Thumbs</em>, another template included with FL.</p>
+				<p>Additional Angujar.JS modules are needed in this template: </p>
+					<ul>
+						<li><a href="https://angular-gettext.rocketeer.be/" target="_blank">angular-gettext</a> for translation support.</li>
+						<li><a href="https://github.com/treasure-data/angular-treasure-overlay-spinner" target="_blank">angular-treasure-overlay-spinner</a> for UI overlay.</li>
+						<li><a href="http://angular-ui.github.io/bootstrap/#/getting_started" target="_blank">Angular UI Bootstrap</a> for pagination.</li>
+					</ul>
+				<br />
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<p class="panel-title">Live demo:</p>
+					</div>
+					<div class="panel-body" data-ng-controller="thPhonesExCtrl">
+						<thumbs list="phones2.fl" th="phones2.th" template="/assets/flexi-list/templates/thumbs/thumbs.html"></thumbs>
+					</div>
+				</div>
+				<ex-tabs tabs="ex_th"></ex-tabs>
+			</section>
+			
+		</article>
+		<p class="lead" style="margin-top:50px;">
+			<a href="#/tutorial/pagination" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Previous: Pagination. </a>
+		</p>
+	</div>
+</div>

@@ -1,0 +1,67 @@
+<div class="row">
+	<div class="col-lg-12">
+		<div class="page-header">
+			<h1>Sort data</h1>
+		</div>
+		<p>You can sort the dataset by setting the <code>orderby</code> option.</p>
+		<article data-ng-controller="exSortingCtrl">
+			<section>
+				<h2 class="text-primary" style="margin-top:50px;"><a name="" id="client" class="fh-anchor">Load and sort a JSON file</a></h2>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<p class="panel-title sample-title">Live demo:</p>
+					</div>
+					<div class="panel-body" style="min-height:280px;" data-ng-controller="sortPhonesCtrl">
+						<sort-example list="phones"></sort-example>
+					</div>
+				</div>
+				<p>The <em>sortPhonesCtrl</em> controller sets up the FL options.</p>
+				<p>The <em>sortExample</em> directive implements our template. The partial of our template is <em>sort-tpl.html</em></p>
+				<p>The <em>sortExCtrl</em> controller extends <code>$scope.list</code> by adding 
+				the <code>$scope.list.toggleSorting</code> custom functionality to our template.</p>
+				<p>The <code>$scope.list.change</code> API function applies the new <code>orderby</code> clause without reloading the dataset.</p>
+				<p>The <code>$scope.list.loadData</code> API function requests a dataset reload with the new <code>orderby</code> clause.</p>
+				<ex-tabs tabs="ex1"></ex-tabs>
+			</section>
+			
+			<section>
+				<h2 class="text-primary" style="margin-top:50px;"><a name="" id="server" class="fh-anchor">Load and sort data from server side</a></h2>
+				<p>If <code>orderby</code> is present in the server response, FL will use this value to ensure that the view accurately reflects the server response, in spite of the requested value.</p>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<p class="panel-title sample-title">Live demo:</p>
+					</div>
+					<div class="panel-body" style="min-height:280px;" data-ng-controller="sortPhonesServerCtrl">
+						<sort-example list="phones2"></sort-example>
+					</div>
+				</div>
+				<p>The <em>sortPhonesServerCtrl</em> controller sets up the list options.</p>
+				<p>The <em>sortExample</em> directive implements our template.</p>
+				<p>The <em>sortServerExCtrl</em> controller extends <code>$scope.list</code> by adding 
+				the <code>$scope.list.toggleSorting</code> custom functionality to our template and using 
+				the <code>$scope.list.loadData</code> API function.
+				</p>
+				<p>The partial of our template is <em>sort-tpl.html</em></p>
+				<ex-tabs tabs="ex2"></ex-tabs>
+			</section>
+			
+			<section>
+				<h2 class="text-primary" style="margin-top:50px;"><a name="" id="mixed" class="fh-anchor">Load data from server, sorting on client</a></h2>
+				<p>Set the <code>sortOnClient</code> option to <em>true</em> to delegate sorting on FL after loading data from server.</p>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<p class="panel-title sample-title">Live demo:</p>
+					</div>
+					<div class="panel-body" style="min-height:280px;" data-ng-controller="sortPhonesMixedCtrl">
+						<sort-example list="phones3"></sort-example>
+					</div>
+				</div>
+				<ex-tabs tabs="ex3"></ex-tabs>
+			</section>
+		</article>
+		<p class="lead" style="margin-top:50px;">
+			<a href="#/tutorial/first_steps" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Previous: Getting started. </a>
+			<a href="#/tutorial/search" class="pull-right">Next: Search data. <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+		</p>
+	</div>
+</div>

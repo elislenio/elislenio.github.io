@@ -1,0 +1,20 @@
+<fl-main list="list"></fl-main>
+<table class="table">
+<thead>
+  <tr>
+	<th style="text-align:center;">
+		<button type="button" class="btn btn-default btn-xs" data-ng-click="list.toggleSelectAll();" title="{{ list.getCheckedStr()}}" data-ng-if="list.multiselectEnabled()">
+			<span class="glyphicon glyphicon-check" aria-hidden="true"></span> 
+		</button>
+	</th>
+    <th>Name</th>
+  </tr>
+</thead>
+<tbody>
+	<tr data-ng-repeat="rec in list.records" data-ng-click="list.recordToggleSelect(rec);" data-ng-attr-class="{{ list.isRecordSelected(rec) && 'info' || '' }}">
+		<td align="center"><input type="checkbox" value="{{rec.id}}" data-ng-model="rec.flSelected" data-ng-click="$event.stopPropagation();list.enforceSelection(rec);"></td>
+		<td>{{rec['name']}}</td>
+	</tr>
+</tbody>
+</table>
+<p>Selected rows: {{list.getSelectedCount()}}</p>

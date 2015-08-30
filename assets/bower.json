@@ -1,0 +1,23 @@
+{
+  "name": "fl-website",
+  "version": "0.1.0",
+  "homepage": "http://flexilist/",
+  "authors": [
+    "Guido Donnari"
+  ],
+  "description": "FlexiList website",
+  "license": "Apache",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.3",
+    "angular-route": "~1.4.3",
+	"angular-animate": "~1.4.3",
+    "angular-gettext": "~2.1.0",
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.3.0",
+    "bootstrap-social": "~4.9.1",
+    "html5-boilerplate": "~5.2.0",
+    "angular-bootstrap": "~0.13.2"
+  }
+}

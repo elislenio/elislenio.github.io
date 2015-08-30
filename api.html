@@ -1,0 +1,352 @@
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10">
+				<div class="page-header">
+					<h1>API reference</h1>
+				</div>
+				<article data-ng-controller="exSearchCtrl">
+					<section>
+						<h2 class="text-primary" style="margin-top:50px;"><a name="" id="options" class="fh-anchor">Options</a></h2>
+						<p>Use the <code>$scope.list.options</code> model to properly configure FL.</p>
+						<p>&nbsp;</p>
+						<p>Available options are: </p>
+						<blockquote>
+						  <p><code>data</code> (type: <em>array</em>; default: <em>false</em>)</p>
+						  <footer>Use this option to load inline data directly from the options scope.</footer>
+						</blockquote>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<p class="panel-title">Usage example</p>
+							</div>
+							<div class="panel-body" style="min-height:260px;">
+								<sh-code code="opt_data" brush="js"></sh-code>
+							</div>
+						</div>
+						
+						<blockquote>
+						  <p><code>jsonFile</code> (type: <em>string</em>; default: <em>false</em>)</p>
+						  <footer>Use this option to specify a JSON file containing the dataset to be loaded.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>listURL</code> (type: <em>string</em>; default: <em>false</em>)</p>
+						  <footer>Use this option to specify an URL to retrieve the dataset to be loaded.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>method</code> (type: <em>string</em>; default: <em>GET</em>)</p>
+						  <footer>Sets the preferred method (<em>GET</em>, <em>POST</em>) for server requests. This option does not take effect if <code>listURL</code> is set to false.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>urlencoded</code> (type: <em>boolean</em>; default: <em>true</em>)</p>
+						  <footer>If enabled, query string is sent urlencoded using <code>jQuery.param()</code>. This option takes effect if <code>listURL</code> is set to true and <code>method</code> is set to <em>GET</em>.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>autoload</code> (type: <em>boolean</em>; default: <em>true</em>)</p>
+						  <footer>When disabled, you must explicitly call loadData to get the list populated.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>selectable</code> (type: <em>boolean</em>; default: <em>true</em>)</p>
+						  <footer>Enables or disables row selection.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>multiselect</code> (type: <em>boolean</em>; default: <em>true</em>)</p>
+						  <footer>Enables or disables multiple row selection. This option does not take effect if <code>selectable</code> is set to false.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>limit</code> (type: <em>boolean</em>; default: <em>true</em>)</p>
+						  <footer>Use this option to limit the result set.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>where</code> (type: <em>array</em>; default: <em>empty array</em>)</p>
+						  <footer>Use this option to filter the result set. <a href="" data-ng-click="goToApi('filters')">See filters.</a></footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>searchOnClient</code> (type: <em>boolean</em>; default: <em>false</em>)</p>
+						  <footer>If enabled, searching is processed on client side. This option does not take effect if <code>listURL</code> is set to false.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>sortable</code> (type: <em>boolean</em>; default: <em>true</em>)</p>
+						  <footer>Enables or disables sorting on the result set.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>orderby</code> (type: <em>array</em>; default: <em>empty array</em>)</p>
+						  <footer>Use this option to sort the result set.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>sortOnClient</code> (type: <em>boolean</em>; default: <em>false</em>)</p>
+						  <footer>If enabled, sorting is processed on client side. This option does not take effect if <code>listURL</code> is set to false.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>pagination</code> (type: <em>boolean</em>; default: <em>true</em>)</p>
+						  <footer>Enables or disables pagination on the result set.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>paginationOnClient</code> (type: <em>boolean</em>; default: <em>false</em>)</p>
+						  <footer>If enabled, pagination is processed on client side. This option does not take effect if <code>listURL</code> is set to false.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>pagination_clear_selection</code> (type: <em>boolean</em>; default: <em>true</em>)</p>
+						  <footer>If disabled, selected rows are not cleared on page changes. This option does not take effect if <code>pagination</code> is set to false.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>pagesize</code> (type: <em>integer</em>; default: <em>10</em>)</p>
+						  <footer>Sets the number of rows per page. This option does not take effect if <code>pagination</code> is set to false.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>pages</code> (type: <em>integer</em>; default: <em>5</em>)</p>
+						  <footer>Sets the number of pages to show on the pagination widget. This option does not take effect if <code>pagination</code> is set to false.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>log</code> (type: <em>object</em>)</p>
+						  <footer>Use this option to control the console output.<br>
+						  Usage example: <pre>log: {id: 'MyList', err: true, debug: false}</pre>
+						  </footer>
+						</blockquote>
+						
+					</section>
+					
+					<section>
+						<h2 class="text-primary" style="margin-top:50px;"><a name="" id="scopeext" class="fh-anchor">Scope extensions</a></h2>
+						
+						<blockquote>
+						  <p><code>$scope.list.loadData</code> type <em>function(options)</em> returns: <em>void</em></p>
+						  <footer>Triggers data loading.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.change</code> type <em>function(options)</em> returns: <em>void</em></p>
+						  <footer>Change options without reloading data.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.refresh</code> type <em>function()</em> returns: <em>void</em></p>
+						  <footer>Reloads data using the current options settings.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.$emit('flStartOp', object)</code></p>
+						  <footer>Dispatches an event when FL starts processing.
+							<p><code>object</code>: <em>{op: 'opname'}</em></p>
+						  </footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.$emit('flComplete', object)</code></p>
+						  <footer>Dispatches an event when FL completes processing.
+							<p><code>object</code>: <em>{result: 'ERROR', message: 'reason'} on error or {result: 'OK'} on success</em></p>
+						  </footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.selectEnabled</code> type <em>function()</em> returns: <em>boolean</em></p>
+						  <footer>Returns the select enabled status.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.multiselectEnabled</code> type <em>function()</em> returns: <em>boolean</em></p>
+						  <footer>Returns the multiple selection enabled status.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.paginationEnabled</code> type <em>function()</em> returns: <em>boolean</em></p>
+						  <footer>Returns pagination enabled status.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.sortEnabled</code> type <em>function()</em> returns: <em>boolean</em></p>
+						  <footer>Returns sortable enabled status.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.searchEnabled</code> type <em>function()</em> returns: <em>boolean</em></p>
+						  <footer>Returns search enabled status.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.records</code> type <em>array</em></p>
+						  <footer>The records array contains all records in current page.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.isEmpty</code> type <em>function()</em> returns: <em>boolean</em></p>
+						  <footer>Returns true whenever the result set has no records.</footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.isSortedAsc</code> type <em>function(field)</em> returns: <em>boolean</em></p>
+						  <footer>Returns true whenever the list is sorted <em>asc</em> by <code>field</code>.<br>
+						  This function is not available if <code>sortable</code> option is set to false.
+						  </footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.isSortedDesc</code> type <em>function(field)</em> returns: <em>boolean</em></p>
+						  <footer>Returns true whenever the list is sorted <em>desc</em> by <code>field</code>.<br>
+						  This function is not available if <code>sortable</code> option is set to false.
+						  </footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.isRecordSelected</code> type <em>function(record)</em> returns: <em>boolean</em></p>
+						  <footer>Returns true whenever the given <code>record</code> is selected.<br>
+						  This function is not available if <code>selectable</code> option is set to false.
+						  </footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.recordToggleSelect</code> type <em>function(record)</em> returns: <em>void</em></p>
+						  <footer>Toggles row selection.<br>
+						  This function is not available if <code>selectable</code> option is set to false.
+						  </footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.enforceSelection</code> type <em>function(record)</em> returns: <em>void</em></p>
+						  <footer>Triggers the validation of row selection after changing <code>record.flSelected</code> model.<br>
+						  This function is not available if <code>selectable</code> option is set to false.
+						  </footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.getToggleSelNextState</code> type <em>function()</em> returns: <em>boolean</em></p>
+						  <footer>Returns the next selection state for all rows.<br>
+						  This function is not available if <code>selectable</code> option is set to false.
+						  </footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.toggleSelectAll</code> type <em>function()</em> returns: <em>boolean</em></p>
+						  <footer>Toggles the selection state for all rows.<br>
+						  This function is not available if <code>selectable</code> option is set to false.
+						  </footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.getSelectedCount</code> type <em>function()</em> returns: <em>boolean</em></p>
+						  <footer>Returns the selected rows count.<br>
+						  This function is not available if <code>selectable</code> option is set to false.
+						  </footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.getSelectedRecords</code> type <em>function()</em> returns: <em>array</em></p>
+						  <footer>Returns the selected records array.<br>
+						  This function is not available if <code>selectable</code> option is set to false.
+						  </footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.pagination_info</code> type <em>object</em></p>
+						  <footer>The pagination_info object contains these properties:<br>
+						  <ul>
+						    <li><code>firstrec</code>: number of the first record in the current page.</li>
+							<li><code>lastrec</code>: number of the last record in the current page.</li>
+							<li><code>rowcount</code>: number of records in the working dataset.</li>
+							<li><code>currpage</code>: number of the current page in the working dataset.</li>
+							<li><code>lastpage</code>: number of the last page in the working dataset.</li>
+							<li><code>totalpages</code>: number of pages in the working dataset.</li>
+							<li><code>pagesize</code>: number of records per page.</li>
+						  </footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.changePage</code> type <em>function(pagenum)</em> returns: <em>void</em></p>
+						  <footer>Triggers page change.<br>
+						  This function is not available if <code>pagination</code> option is set to false.
+						  </footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.setPageSize</code> type <em>function(size)</em> returns: <em>void</em></p>
+						  <footer>Changes the page size and switches to first page.<br>
+						  This function is not available if <code>pagination</code> option is set to false.
+						  </footer>
+						</blockquote>
+						
+						<blockquote>
+						  <p><code>$scope.list.server_response</code> type <em>object</em></p>
+						  <footer>Stores the server response.<br>
+						  This model is not available if <code>listURL</code> option is set to false.
+						  </footer>
+						</blockquote>
+						
+					</section>
+					
+					<section>
+						<h2 class="text-primary" style="margin-top:50px;"><a name="" id="filters" class="fh-anchor">Filters</a></h2>
+						<p>FL comes with several filters. You can add your own custom filters.</p>
+						<p>The provided filters only applies to client side processing and you may implement them on server side. </p>
+						<blockquote>
+						  <p><abbr title="Equal">"eq"</abbr>: Evaluates the <em>Equal</em> condition.</p>
+						  <footer>Set <code>option</code> to true for case insensitive search.</footer>
+						</blockquote>
+						<blockquote>
+						  <p><abbr title="Not Equal">"ne"</abbr>: Evaluates the <em>Not Equal</em> condition.</p>
+						  <footer>Set <code>option</code> to true for case insensitive search.</footer>
+						</blockquote>
+						<blockquote>
+						  <p><abbr title="Greater">"gt"</abbr>: Evaluates the <em>Greater</em> condition.</p>
+						</blockquote>
+						<blockquote>
+						  <p><abbr title="Greater Equal">"ge"</abbr>: Evaluates the <em>Greater Equal</em> condition.</p>
+						</blockquote>
+						<blockquote>
+						  <p><abbr title="Lower">"lt"</abbr>: Evaluates the <em>Lower</em> condition.</p>
+						</blockquote>
+						<blockquote>
+						  <p><abbr title="Lower Equal">"le"</abbr>: Evaluates the <em>Lower Equal</em> condition.</p>
+						</blockquote>
+						<blockquote>
+						  <p><abbr title="Like on Left">"like_l"</abbr>: Evaluates the <em>Like</em> condition with a wildcard on the left.</p>
+						  <footer>Set <code>option</code> to true for case insensitive search.</footer>
+						</blockquote>
+						<blockquote>
+						  <p><abbr title="Like on Right">"like_r"</abbr>: Evaluates the <em>Like</em> condition with a wildcard on the right.</p>
+						  <footer>Set <code>option</code> to true for case insensitive search.</footer>
+						</blockquote>
+						<blockquote>
+						  <p><abbr title="Like on Both left and right">"like_b"</abbr>: Evaluates the <em>Like</em> condition with a wildcard on both the left and right.</p>
+						  <footer>Set <code>option</code> to true for case insensitive search.</footer>
+						</blockquote>
+						<blockquote>
+						  <p><abbr title="Is Null">"is_null"</abbr>: Evaluates the <em>Is Null</em> condition.</p>
+						</blockquote>
+						<blockquote>
+						  <p><abbr title="Is Not Nul">"is_not_null"</abbr>: Evaluates the <em>Is Not Null</em> condition.</p>
+						</blockquote>
+						<blockquote>
+						  <p><abbr title="Regular Expression">"regexp"</abbr>: Evaluates the a condition based on a regular expression.</p>
+						  <footer>Set <code>option</code> to apply a RegExp modifier.</footer>
+						</blockquote>
+					</section>
+				</article>
+			</div>
+			<div class="col-lg-2">
+				<div style="position:fixed">
+					<h3>API reference</h3>
+					<ul>
+						<li><a href="" data-ng-click="goToHash('options')">Options</a></li>
+						<li><a href="" data-ng-click="goToHash('scopeext')">Scope extensions</a></li>
+						<li><a href="" data-ng-click="goToHash('filters')">Filters</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>

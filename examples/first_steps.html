@@ -1,0 +1,95 @@
+<!-- Getting started -->
+<div class="row" data-ng-controller="exFirstSteps">
+	<div class="col-lg-12">
+		<div class="page-header">
+			<h1>Getting started</h1>
+		</div>
+		<h2 class="text-primary" style="margin-top:50px;"><a name="" id="basic" class="fh-anchor">The very basics:</a></h2>
+		<p>The following example shows the most minimal usage of FlexiList.</p>
+		<p>In few steps we will load and display data using the FlexiList API with a very basic template.</p>
+		<p>&nbsp;</p>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<p class="panel-title fspanel">Step 1. Set up your page</p>
+			</div>
+			<div class="panel-body">
+				<p>Add the FL javascript file to the head section of your HTML document:</p>
+				<sh-code code="step1_1" brush="js"></sh-code>
+				
+				<p>HTML needed to display your list:</p>
+				<sh-code code="step1_2" brush="js"></sh-code>
+				<p>In the next steps, we are going to create a controller called <em>csBasicPhonesCtrl</em> to set up the list, and a directive called <em>BasicExample</em> in order to get a reusable template for different datasets.</p>
+			</div>
+		</div>
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<p class="panel-title fspanel">Step 2. Set up the scope</p>
+			</div>
+			<div class="panel-body">
+				<p>In your application module, declare a dependency on the flexiList module:</p>
+				<sh-code code="step2_1" brush="js"></sh-code>
+				
+				<p>Set up FL options in a scope at your controller:</p>
+				<sh-code code="step2_2" brush="js"></sh-code>
+				<p>In this example we configured FL to load all the data in the <em>phones.json</em> file, with a fetch limit of four records.</p>
+				<p>Use the <code>limit</code> option to restrict the amount of records retrieved.</p>
+			</div>
+		</div>
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<p class="panel-title fspanel">Step 3. Set up a directive for your template</p>
+			</div>
+			<div class="panel-body">
+				Set up your view with a directive:
+				<sh-code code="step3" brush="js"></sh-code>
+				<p>In the next step, we are going to create a partial called <em>basic-tpl.html</em> in order to get a dynamic template using the FL API.</p>
+			</div>
+		</div>
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<p class="panel-title fspanel">Step 4. The template</p>
+			</div>
+			<div class="panel-body">
+				The <code>flMain</code> directive exposes the API to your template by extending the <code>$scope.list</code> model.
+				<sh-code code="step4" brush="xml"></sh-code>
+				<p>In this example we use the <code>list.getRecords()</code> API function to get an array containing the loaded records.</p>
+			</div>
+		</div>
+		
+		<h3 class="text-primary" style="margin-top:50px;">See it in action:</h3>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<p class="panel-title sample-title">Live demo:</p>
+			</div>
+			<div class="panel-body" style="min-height:120px;">
+				<div data-ng-controller="csBasicPhonesCtrl">
+					<basic-example list="phones"></basic-example>
+				</div>
+			</div>
+		</div>
+		<ex-tabs tabs="exbasic"></ex-tabs>
+		
+		<h2 class="text-primary" style="margin-top:50px;"><a name="" id="server" class="fh-anchor">Loading data from a database.</a></h2>
+		<p>Server-side processing is enabled by setting the <code>listURL</code> option.</p>
+		<p>The <code>urlencoded</code> option is set to true by default and when enabled, query parameters are encoded with <code>jQuery.param()</code></p>
+		<p>It is recommended to enrich the server response including additional information about the returned data set to ensure that the view accurately reflect their status.</p>
+		<p><em>(We'll see the details of each of these options in the following sections of this tutorial.)</em></p>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<p class="panel-title sample-title">Live demo:</p>
+			</div>
+			<div class="panel-body" style="min-height:120px;">
+				<div data-ng-controller="ssBasicPhonesCtrl">
+					<basic-example list="phones2"></basic-example>
+				</div>
+			</div>
+		</div>
+		<ex-tabs tabs="exbasicss"></ex-tabs>
+		<p class="lead" style="margin-top:50px;">
+			<a href="#/tutorial/sorting" class="pull-right">Next: Sort data. <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+		</p>
+	</div>
+</div>

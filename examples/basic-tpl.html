@@ -1,0 +1,8 @@
+<fl-main list="list"></fl-main>
+<ul>
+	<li data-ng-repeat="rec in list.records">{{rec['name']}}</li>
+</ul>
+<div data-ng-if="list.options.listURL">
+	<p>Server response:</p>
+	<p><pre style="height:200px;scroll:auto;"><code>{{list.server_response | json: 2}}</code></pre></p>
+</div>

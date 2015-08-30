@@ -1,0 +1,29 @@
+body { 
+	padding-top: 50px;
+}
+
+.fljbtr {
+	background-color: #3C5E80;
+	color: white;
+}
+
+.fh-anchor{padding-top: 90px;}
+
+.fspanel{
+	font-weight: bold;
+}
+
+.sample-title{
+	font-style: italic;
+}
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.syntaxhighlighter {
+	min-height:50px;
+	max-height:200px;
+}
+
+.tab-content {
+	min-height:240px;
+}

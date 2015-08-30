@@ -1,0 +1,5 @@
+<tabset>
+	<tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disable="tab.disabled">
+		<sh-code url="tab.url" code="tab.code" brush="tab.brush"></sh-code>
+	</tab>
+</tabset>

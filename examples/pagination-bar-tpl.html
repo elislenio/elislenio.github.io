@@ -1,0 +1,26 @@
+<div class="row" data-ng-if="list.paginationEnabled()">
+	<div class="col-lg-5">
+		<!-- Angular UI Bootstrap pagination -->
+		<pagination boundary-links="true" ng-change="pb.pageChanged()" ng-model="list.pagination_info.currpage" total-items="list.pagination_info.rowcount" items-per-page="list.pagination_info.pagesize" max-size="list.pagination_info.show_pages" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+	</div>
+	<!-- Page size -->
+	<div class="col-lg-3" style="text-align:right;">
+		<div class="input-group" style="margin-top:20px;">
+			<div class="input-group-btn">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{{'Select a value'}}">
+					Page size <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li data-ng-repeat="ps in list.pagesizes"><a href="" data-ng-click="list.setPageSize(ps);">{{ps}}</a></li>
+				</ul>
+			</div>
+			<input type="text" class="form-control" aria-label="Page Size" value="{{list.pagination_info.pagesize}}" readonly>
+		</div>
+	</div>
+	<!-- Info -->
+	<div class="col-lg-4" style="text-align:right;">
+		<div style="margin-top:20px;">
+			Showing {{list.pagination_info.firstrec}} to {{list.pagination_info.lastrec}} of {{list.pagination_info.rowcount}} entries
+		<div>
+	</div>
+</div>

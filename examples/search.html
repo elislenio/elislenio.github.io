@@ -1,0 +1,68 @@
+<div class="row">
+	<div class="col-lg-12">
+		<div class="page-header">
+			<h1>Search</h1>
+		</div>
+		<p>You can filter the dataset by setting the <code>where</code> option.</p>
+		<article data-ng-controller="exSearchCtrl">
+			<section>
+				<h2 class="text-primary" style="margin-top:50px;"><a name="" id="client" class="fh-anchor">Load and search a JSON file</a></h2>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<p class="panel-title sample-title">Live demo:</p>
+					</div>
+					<div class="panel-body" style="min-height:150px;" data-ng-controller="searchPhonesCtrl">
+						<search-example list="phones1"></search-example>
+					</div>
+				</div>
+				<p>The <em>searchPhonesCtrl</em> controller sets up the FL options.</p>
+				<p>The <em>searchExample</em> directive implements our template. The partial of our template is <em>search-tpl.html</em></p>
+				<p>Our template displays a very basic search form, the <em>searchExCtrl</em> controller extends <code>$scope.list</code> by adding 
+				the <code>$scope.list.search</code> function to trigger the search on the dataset.</p>
+				<p>The <code>$scope.list.change</code> API function applies the new <code>where</code> clause without reloading the dataset.</p>
+				<p>The <code>$scope.list.loadData</code> API function requests a dataset reload with the new <code>where</code> clause.</p>
+				<ex-tabs tabs="ex1"></ex-tabs>
+			</section>
+			
+			<section>
+				<h2 class="text-primary" style="margin-top:50px;"><a name="" id="server" class="fh-anchor">Load and search data from server side</a></h2>
+				<p>If <code>where</code> is present in the server response, FL will use this value to ensure that the view accurately reflects the server response, in spite of the requested value.</p>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<p class="panel-title sample-title">Live demo:</p>
+					</div>
+					<div class="panel-body" style="min-height:300px;" data-ng-controller="searchPhonesServerCtrl">
+						<advsearch-example list="phones2"></advsearch-example>
+					</div>
+				</div>
+				<p>This template displays a more complex search form.</p>
+				<ex-tabs tabs="ex2"></ex-tabs>
+			</section>
+			
+			<section>
+				<h2 class="text-primary" style="margin-top:50px;"><a name="" id="mixed" class="fh-anchor">Load data from server, search on client</a></h2>
+				<p>Set the <code>searchOnClient</code> option to <em>true</em> to delegate the search on FL after loading data from server.</p>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<p class="panel-title sample-title">Live demo:</p>
+					</div>
+					<div class="panel-body" style="min-height:300px;" data-ng-controller="searchPhonesMixedCtrl">
+						<advsearch-example list="phones3"></advsearch-example>
+					</div>
+				</div>
+				<ex-tabs tabs="ex3"></ex-tabs>
+			</section>
+			
+			<section>
+				<h2 class="text-primary" style="margin-top:50px;"><a name="" id="filters" class="fh-anchor">Filters</a></h2>
+				<p>FL comes with several filters that you can directly use, when <code>jsonFile</code> option is active. (See the <a href="#/api/filters">API reference</a> for details)</p>
+				<p>Also, you can extend FL with your own additional filters.</p>
+				<p>When using FL with server side processing, filters must be implemented with the technology of your choice.</p>
+			</section>
+		</article>
+		<p class="lead" style="margin-top:50px;">
+			<a href="#/tutorial/sorting" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Previous: Sort data. </a>
+			<a href="#/tutorial/selecting" class="pull-right">Next: Selecting rows. <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+		</p>
+	</div>
+</div>

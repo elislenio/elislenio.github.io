@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="flSite">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="FlexiList is an Angular.JS module to easily create flexible and reusable listings. FlexiList is an Angular.JS module for creating reusable AJAX based lists while you retain full control of your template.">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+
+    <title>FlexiList - Create flexible data-driven lists for Angular.JS</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	
+	<link href="/assets/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/assets/bower_components/bootstrap-social/bootstrap-social.css" rel="stylesheet">
+	
+	<!-- AngularJS -->
+	<!-- <link href="/assets/bower_components/angular-bootstrap/ui-bootstrap-csp.css" rel="stylesheet"> -->
+	<link href="/assets/flexi-list/templates/crud-table/crud-table.css" rel="stylesheet">
+	<link href="/assets/flexi-list/templates/thumbs/thumbs.css" rel="stylesheet">
+	<link href="/assets/bower_components/angular-treasure-overlay-spinner/dist/treasure-overlay-spinner.min.css" rel="stylesheet">
+	
+    <!-- Custom styles for this template -->
+    <link href="/assets/css/template.css" rel="stylesheet">
+	
+	<!-- Syntax Highlighter -->
+	<link href="/assets/syntaxhighlighter_3.0.83/styles/shCore.css" rel="stylesheet">
+	<link href="/assets/syntaxhighlighter_3.0.83/styles/shThemeDefault.css" rel="stylesheet">
+	
+	<!-- AngularJS -->
+	<script src="/assets/bower_components/angular/angular.min.js"></script>
+	<script src="/assets/bower_components/angular-route/angular-route.min.js"></script>
+	<script src="/assets/bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="/assets/bower_components/angular-gettext/dist/angular-gettext.min.js"></script>
+	<script src="/assets/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+	<script src="/assets/bower_components/angular-treasure-overlay-spinner/dist/treasure-overlay-spinner.min.js"></script>
+	
+	<!-- jQuery -->
+	<script src="/assets/bower_components/jquery/dist/jquery.min.js"></script>
+	
+	<!-- Syntax Highlighter -->
+	<script src="/assets/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+	<script src="/assets/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+	<script src="/assets/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+	<script src="/assets/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+	<script src="/assets/syntaxhighlighter_3.0.83/scripts/shBrushPhp.js"></script>
+	<script src="/assets/syntaxhighlighter_3.0.83/scripts/shBrushPlain.js"></script>
+
+	<!-- Site -->
+	<script src="/assets/flexi-list/flexi-list.min.js"></script>
+	<script src="/assets/flexi-list/templates/crud-table/crud-table.min.js"></script>
+	<script src="/assets/flexi-list/templates/crud-table/languages/translations.js"></script>
+	<script src="/assets/flexi-list/templates/thumbs/thumbs.min.js"></script>
+	
+	<script src="/examples.js"></script>
+	<script src="/examples/quick-demo.js"></script>
+	<script src="/examples/basic-tpl.js"></script>
+	<script src="/examples/basic.js"></script>
+	<script src="/examples/basic-ss.js"></script>
+	<script src="/examples/sort-tpl.js"></script>
+	<script src="/examples/sorting.js"></script>
+	<script src="/examples/sorting-ss.js"></script>
+	<script src="/examples/sorting-mixed.js"></script>
+	<script src="/examples/search.js"></script>
+	<script src="/examples/search-tpl.js"></script>
+	<script src="/examples/search-server.js"></script>
+	<script src="/examples/search-mixed.js"></script>
+	<script src="/examples/search-adv-tpl.js"></script>
+	<script src="/examples/selecting.js"></script>
+	<script src="/examples/selecting-multiple.js"></script>
+	<script src="/examples/selection-tpl.js"></script>
+	<script src="/examples/pagination.js"></script>
+	<script src="/examples/pagination2.js"></script>
+	<script src="/examples/pagination3.js"></script>
+	<script src="/examples/pagination-tpl.js"></script>
+	<script src="/examples/pagination-bar.js"></script>
+	<script src="/examples/templates-ct.js"></script>
+	<script src="/examples/templates-th.js"></script>
+	<script src="/api.js"></script>
+	<script src="/app.js"></script>
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/#/" onclick="window.scrollTo(0,0);">FlexiList</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#/tutorial" onclick="window.scrollTo(0,0);">Getting Started</a></li>
+				<li><a href="#/api" onclick="window.scrollTo(0,0);">API Reference</a></li>
+				<li><a href="#/contributing" onclick="window.scrollTo(0,0);">Contributing</a></li>
+			</ul>
+		</div>
+	  </div>
+	</nav>
+	<div data-ng-view style="min-height:503px;"></div>
+	<!-- Footer -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12" style="background-color: #3C5E80; height:50px; color:white; text-align: center; margin-top:40px;">
+				<p>FlexiList is an Angular.JS module for creating reusable AJAX based lists while you retain full control of your template.</p>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/assets/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>

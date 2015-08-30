@@ -1,0 +1,33 @@
+{
+  "name": "angular-treasure-overlay-spinner",
+  "version": "1.1.0",
+  "authors": [
+    {
+      "name": "Cesar Andreu",
+      "email": "cesar@treasure-data.com"
+    }
+  ],
+  "main": [
+    "dist/treasure-overlay-spinner.min.js",
+    "dist/treasure-overlay-spinner.min.css"
+  ],
+  "ignore": [
+    "lib",
+    "test",
+    "*.conf.js",
+    "**/.*",
+    "*.html",
+    "*.json",
+    "**/.*",
+    "*.json",
+    "*.html",
+    "LICENSE",
+    "README.md"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "angular-mocks": ">=1.2.0",
+    "angular-animate": ">=1.2.0",
+    "angular": ">=1.2.0"
+  }
+}
