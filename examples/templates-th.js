@@ -19,7 +19,7 @@ flExamples.controller('thPhonesExCtrl', ['$scope', function($scope) {
 	//Set up FL options
 	$scope.phones2.fl = {};
 	$scope.phones2.fl.options = {
-		jsonFile: 'http://flexilist.16mb.com/examples/db/get_phones.php',
+		jsonFile: '/examples/phones.json',
 		pagesize: 3,
 		pages: 3,
 		orderby: [
