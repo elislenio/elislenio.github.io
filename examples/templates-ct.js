@@ -44,7 +44,7 @@ flExamples.controller('ctPhonesExCtrl', ['$scope', function($scope) {
 	//Set up FL options
 	$scope.phones.fl = {};
 	$scope.phones.fl.options = {
-		listURL: '/examples/db/get_phones.php',
+		listURL: 'http://flexilist.16mb.com/examples/db/get_phones.php',
 		method: 'GET',
 		urlencoded: true,
 		pagesize: 5,
