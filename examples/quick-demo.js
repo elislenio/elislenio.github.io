@@ -25,9 +25,9 @@ flExamples.controller('demoCtrl', ['$scope', function($scope) {
 			{field: 'snippet', title: 'Description', sortable: false}
 		],
 		filters: [
-			{field: "name", title: 'Name', condition: 'like_b', option: true},
+			{field: "name", title: 'Name', condition: 'like_b', options: {insensitive: true}},
 			{field: "age", title: 'Age', condition: 'eq'},
-			{field: "snippet", title: 'Description', condition: 'like_b', option: true}
+			{field: "snippet", title: 'Description', condition: 'like_b', options: {insensitive: true}}
 		],
 		pagesizes: [5,10,20],
 		debug: true
