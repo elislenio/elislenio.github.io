@@ -20,7 +20,7 @@ flExamples.controller('searchPhonesMixedCtrl', ['$scope', function($scope) {
 			field: "age", 
 			title: 'Age', 
 			filters: [ 
-				{title: 'equal', condition: 'eq'},
+				{title: 'equal', condition: 'eq', options: {insensitive: false}},
 				{title: 'not equal', condition: 'ne'},
 				{title: 'greater than', condition: 'gt'},
 				{title: 'lower than', condition: 'lt'}
@@ -41,7 +41,7 @@ flExamples.controller('searchPhonesMixedCtrl', ['$scope', function($scope) {
 	$scope.phones3.search_value = '';
 	
 	$scope.phones3.options = {
-		listURL: 'http://flexilist.16mb.com/examples/db/get_phones.php',
+		listURL: '/examples/db/get_phones.php',
 		method: 'GET',
 		urlencoded: true,
 		limit: 5,
