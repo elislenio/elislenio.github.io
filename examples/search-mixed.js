@@ -41,7 +41,7 @@ flExamples.controller('searchPhonesMixedCtrl', ['$scope', function($scope) {
 	$scope.phones3.search_value = '';
 	
 	$scope.phones3.options = {
-		listURL: '/examples/db/get_phones.php',
+		listURL: 'http://flexilist.16mb.com/examples/db/get_phones.php',
 		method: 'GET',
 		urlencoded: true,
 		limit: 5,

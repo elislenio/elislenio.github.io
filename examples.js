@@ -53,7 +53,7 @@ flExamples.controller('exTutorial', ['$scope', '$routeParams', '$location', func
 
 	$scope.step4 = '<fl-main list="list"></fl-main> \n\
 <ul> \n\
-	<li data-ng-repeat="rec in list.getRecords()">{{rec[\'name\']}}</li> \n\
+	<li data-ng-repeat="rec in list.records">{{rec[\'name\']}}</li> \n\
 </ul>';
 
 	$scope.exbasic = [
