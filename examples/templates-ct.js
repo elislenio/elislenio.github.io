@@ -19,9 +19,9 @@ flExamples.controller('ctPhonesExCtrl', ['$scope', function($scope) {
 			{field: 'snippet', title: 'Description', sortable: false}
 		],
 		filters: [
-			{field: "name", title: 'Name', condition: 'like_b', option: true},
+			{field: "name", title: 'Name', condition: 'like_b', options: {insensitive: true}},
 			{field: "age", title: 'Age', condition: 'eq'},
-			{field: "snippet", title: 'Description', condition: 'like_b', option: true}
+			{field: "snippet", title: 'Description', condition: 'like_b', options: {insensitive: true}}
 		],
 		pagesizes: [5,10,20],
 		debug: true,
@@ -67,7 +67,7 @@ flExamples.controller('ctPhonesExCtrl', ['$scope', function($scope) {
 		field: $scope.phones.ct.search_field.field, 
 		condition: $scope.phones.ct.search_field.condition, 
 		value: $scope.phones.ct.search_value,
-		option: $scope.phones.ct.search_field.option
+		options: $scope.phones.ct.search_field.options
 	}];
 	*/
 	

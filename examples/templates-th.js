@@ -12,14 +12,14 @@ flExamples.controller('thPhonesExCtrl', ['$scope', function($scope) {
 		th_snippet: 'snippet',
 		search_field: 'name',
 		search_condition: 'like_b', 
-		search_condition_opt: true,
+		search_condition_opts: {insensitive: true},
 		pagesizes: [3,6,9,12]
 	};
 	
 	//Set up FL options
 	$scope.phones2.fl = {};
 	$scope.phones2.fl.options = {
-		jsonFile: '/examples/phones.json',
+		jsonFile: 'http://flexilist.16mb.com/examples/db/get_phones.php',
 		pagesize: 3,
 		pages: 3,
 		orderby: [
